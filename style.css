@@ -296,6 +296,8 @@ ul {
     display: flex;
     gap: 28px;
     align-items: center;
+    margin-left: auto;
+    margin-right: 32px;
 }
 
 .nav-links a {
@@ -320,8 +322,6 @@ ul {
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--text-secondary);
-    margin-left: auto;
-    margin-right: 20px;
 }
 
 .lang-switch span {
@@ -345,8 +345,8 @@ ul {
 
 @media (max-width: 768px) {
     .lang-switch {
-        margin-left: 0;
-        margin-right: 15px;
+        margin-left: auto;
+        margin-right: 20px;
     }
 }
 

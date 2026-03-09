@@ -105,38 +105,57 @@ function initContactForm() {
     const interest = document.getElementById('interest').value;
     const message = document.getElementById('message').value.trim();
 
+    // Obtain language from the document context
+    const lang = document.documentElement.lang || 'ro';
+
     if (!name || !phone || !interest) {
-      showNotification('Te rugăm să completezi toate câmpurile obligatorii.', 'error');
+      showNotification(lang === 'en' ? 'Please fill in all required fields.' : 'Te rugăm să completezi toate câmpurile obligatorii.', 'error');
       return;
     }
 
     // Build WhatsApp message
     const interestLabels = {
-      'rca': 'Asigurare RCA',
-      'casco': 'Asigurare CASCO',
-      'locuinta': 'Asigurare locuință',
-      'calatorie': 'Asigurare călătorie',
-      'sanatate': 'Asigurare sănătate',
-      'viata': 'Asigurare viață',
-      'bunuri': 'Asigurare bunuri',
-      'rc': 'Răspundere civilă',
-      'ipotecar': 'Credit ipotecar',
-      'refinantare': 'Refinanțare',
-      'nevoi': 'Credit nevoi personale',
-      'imobiliar': 'Consultanță imobiliară'
+      'ro': {
+        'rca': 'Asigurare RCA',
+        'casco': 'Asigurare CASCO',
+        'locuinta': 'Asigurare locuință',
+        'calatorie': 'Asigurare călătorie',
+        'sanatate': 'Asigurare sănătate',
+        'viata': 'Asigurare viață',
+        'bunuri': 'Asigurare bunuri',
+        'rc': 'Răspundere civilă',
+        'ipotecar': 'Credit ipotecar',
+        'refinantare': 'Refinanțare',
+        'nevoi': 'Credit nevoi personale',
+        'imobiliar': 'Consultanță imobiliară'
+      },
+      'en': {
+        'rca': 'RCA Insurance',
+        'casco': 'CASCO Insurance',
+        'locuinta': 'Home Insurance',
+        'calatorie': 'Travel Insurance',
+        'sanatate': 'Health Insurance',
+        'viata': 'Life Insurance',
+        'bunuri': 'Goods Insurance',
+        'rc': 'Civil liability',
+        'ipotecar': 'Mortgage Loan',
+        'refinantare': 'Refinancing',
+        'nevoi': 'Personal Loan',
+        'imobiliar': 'Real Estate Consulting'
+      }
     };
 
-    let whatsappMsg = `Bună ziua, mă numesc ${name}.\n`;
-    whatsappMsg += `Telefon: ${phone}\n`;
-    whatsappMsg += `Sunt interesat de: ${interestLabels[interest] || interest}\n`;
+    let whatsappMsg = lang === 'en' ? `Hello, my name is ${name}.\n` : `Bună ziua, mă numesc ${name}.\n`;
+    whatsappMsg += (lang === 'en' ? 'Phone: ' : 'Telefon: ') + `${phone}\n`;
+    whatsappMsg += (lang === 'en' ? 'I am interested in: ' : 'Sunt interesat de: ') + `${(interestLabels[lang] && interestLabels[lang][interest]) || interest}\n`;
     if (message) {
-      whatsappMsg += `\nMesaj: ${message}`;
+      whatsappMsg += (lang === 'en' ? '\nMessage: ' : '\nMesaj: ') + `${message}`;
     }
 
     const whatsappUrl = `https://wa.me/40766658583?text=${encodeURIComponent(whatsappMsg)}`;
     window.open(whatsappUrl, '_blank');
 
-    showNotification('Mesajul a fost pregătit! Se deschide WhatsApp...', 'success');
+    showNotification(lang === 'en' ? 'Message prepared! Opening WhatsApp...' : 'Mesajul a fost pregătit! Se deschide WhatsApp...', 'success');
     form.reset();
   });
 }
