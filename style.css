@@ -147,6 +147,12 @@ ul {
     border-radius: 1px;
 }
 
+@media (min-width: 769px) {
+    .mobile-nav-links {
+        display: none !important;
+    }
+}
+
 .section-title {
     font-size: clamp(2.2rem, 4.5vw, 3.2rem);
     margin-bottom: 18px;
@@ -303,11 +309,6 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    position: fixed;
-    top: 0;
-    right: 100px;
-    height: 64px;
-    z-index: 1001;
 }
 
 @media (min-width: 769px) {
