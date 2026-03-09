@@ -4,12 +4,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Basics -->
   <meta name="description"
-    content="Dragoș Vîrjoghe - Consultant în asigurări, creditare și imobiliar. Te ajut cu asigurări RCA, CASCO, credite ipotecare, refinanțări și multe altele.">
-  <meta name="keywords" content="asigurări, credite ipotecare, refinanțări, RCA, CASCO, imobiliar, broker, consultant">
+    content="Dragoș Vîrjoghe - Consultant în asigurări, creditare și imobiliar. Te ajut cu asigurări RCA, CASCO, credite ipotecare, refinanțări și imobiliare. Consultanță gratuită.">
+  <meta name="keywords"
+    content="asigurări, credite ipotecare, refinanțări, RCA, CASCO, imobiliar, broker, consultant financiar, Bucuresti, Romania">
   <meta name="author" content="Dragoș Vîrjoghe">
   <title>Dragoș Vîrjoghe | Consultant Asigurări, Creditare & Imobiliar</title>
-  <link rel="stylesheet" href="style.css?v=3">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dragoș Vîrjoghe | Consultant Asigurări, Creditare & Imobiliar">
+  <meta property="og:description"
+    content="Consultanță în asigurări, credite ipotecare și imobiliare. Găsește soluțiile financiare potrivite ție.">
+  <meta property="og:image" content="/images/dragos.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Dragoș Vîrjoghe | Consultant Asigurări, Creditare & Imobiliar">
+  <meta property="twitter:description"
+    content="Consultanță în asigurări, credite ipotecare și imobiliare. Găsește soluțiile financiare potrivite ție.">
+  <meta property="twitter:image" content="/images/dragos.png">
+
+  <!-- JSON-LD Entity & Financial Service (AEO & GEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "#person",
+        "name": "Dragoș Vîrjoghe",
+        "jobTitle": "Consultant Financiar",
+        "telephone": "+40766658583",
+        "image": "/images/dragos.png",
+        "sameAs": [
+          "https://wa.me/40766658583"
+        ]
+      },
+      {
+        "@type": "FinancialService",
+        "@id": "#financial-service",
+        "name": "Consultanță Asigurări și Creditare - Dragoș Vîrjoghe",
+        "provider": {"@id": "#person"},
+        "description": "Servicii de brokeraj asigurări RCA, CASCO, locuință, sănătate. Soluții de creditare ipotecară și refinanțare.",
+        "areaServed": "România",
+        "telephone": "+40766658583",
+        "priceRange": "$$"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Cât costă o consultanță financiară?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consultanța inițială este 100% gratuită. Începem prin a discuta nevoile tale pentru a găsi cea mai bună soluție de asigurare sau creditare."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce tipuri de asigurări oferiți?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oferim brokeraj pentru toate tipurile de asigurări: RCA, CASCO, asigurare obligatorie și facultativă pentru locuință, asigurări de viață și de sănătate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mă puteți ajuta cu refinanțarea unui credit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da, analizăm creditul existent și identificăm oferte de la alte bănci pentru a reduce rata lunară sau perioada de rambursare."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css?v=4">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 </head>
@@ -32,13 +114,19 @@
     <div class="container">
       <a href="#" class="nav-logo">Dragoș <span>Vîrjoghe</span></a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">Despre mine</a></li>
-        <li><a href="#services">Servicii</a></li>
-        <li><a href="#insurance">Asigurări</a></li>
-        <li><a href="#credit">Creditare</a></li>
-        <li><a href="#testimonials">Păreri</a></li>
-        <li><a href="#contact" class="nav-cta">Contactează-mă</a></li>
+        <li><a href="#about" data-i18n="nav_about">Despre mine</a></li>
+        <li><a href="#services" data-i18n="nav_services">Servicii</a></li>
+        <li><a href="#insurance" data-i18n="nav_insurance">Asigurări</a></li>
+        <li><a href="#credit" data-i18n="nav_credit">Creditare</a></li>
+        <li><a href="#testimonials" data-i18n="nav_testimonials">Păreri</a></li>
+        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+        <li><a href="#contact" class="nav-cta" data-i18n="nav_contact">Contactează-mă</a></li>
       </ul>
+      <div class="lang-switch" id="langSwitch">
+        <span class="active" data-lang="ro">RO</span>
+        <span class="separator">|</span>
+        <span data-lang="en">EN</span>
+      </div>
       <div class="menu-toggle" id="menuToggle">
         <span></span>
         <span></span>
@@ -53,26 +141,26 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="pulse"></span>
-          Disponibil pentru consultanță
+          <span data-i18n="hero_badge">Disponibil pentru consultanță</span>
         </div>
         <h1 class="hero-title">
-          Salut, sunt<br>
+          <span data-i18n="hero_title_1">Salut, sunt<br></span>
           <span class="gradient-text">Dragoș Vîrjoghe</span>
         </h1>
-        <p class="hero-subtitle">Consultant în Asigurări, Creditare & Imobiliar</p>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">Consultant în Asigurări, Creditare & Imobiliar</p>
         <p class="hero-description">
           Te ajut să găsești soluțiile financiare potrivite nevoilor tale. De la asigurări complete la credite
           avantajoase, sunt alături de tine la fiecare pas.
         </p>
         <div class="hero-buttons">
           <a href="tel:+40766658583" class="btn btn-primary" id="heroCallBtn">
-            📞 Sună-mă acum
+            <span data-i18n="hero_call">📞 Sună-mă acum</span>
           </a>
           <a href="https://wa.me/40766658583" target="_blank" class="btn btn-whatsapp" id="heroWhatsappBtn">
-            💬 WhatsApp
+            <span data-i18n="hero_wa">💬 WhatsApp</span>
           </a>
           <a href="#services" class="btn btn-secondary" id="heroServicesBtn">
-            Descoperă serviciile →
+            <span data-i18n="hero_services">Descoperă serviciile →</span>
           </a>
         </div>
       </div>
@@ -81,23 +169,23 @@
         <div class="profile-card glass">
           <div class="profile-avatar"><img src="images/dragos.png" alt="Dragoș Vîrjoghe"></div>
           <h2 class="profile-name">Dragoș Vîrjoghe</h2>
-          <p class="profile-title">Consultant & Broker Financiar</p>
+          <p class="profile-title" data-i18n="prof_title">Consultant & Broker Financiar</p>
           <div class="profile-stats">
             <div class="stat">
               <div class="stat-number">3</div>
-              <div class="stat-label">Domenii</div>
+              <div class="stat-label" data-i18n="prof_stat1">Domenii</div>
             </div>
             <div class="stat">
               <div class="stat-number">8+</div>
-              <div class="stat-label">Tipuri asigurări</div>
+              <div class="stat-label" data-i18n="prof_stat2">Tipuri asigurări</div>
             </div>
             <div class="stat">
               <div class="stat-number">100%</div>
-              <div class="stat-label">Dedicare</div>
+              <div class="stat-label" data-i18n="prof_stat3">Dedicare</div>
             </div>
           </div>
           <a href="#contact" class="btn btn-primary profile-contact-btn" id="profileContactBtn">
-            Solicită o consultanță gratuită
+            <span data-i18n="prof_btn">Solicită o consultanță gratuită</span>
           </a>
         </div>
       </div>
@@ -109,8 +197,8 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-text reveal">
-          <span class="section-label">Despre mine</span>
-          <h2 class="section-title">Partenerul tău financiar de încredere</h2>
+          <span class="section-label" data-i18n="nav_about">Despre mine</span>
+          <h2 class="section-title" data-i18n="about_title">Partenerul tău financiar de încredere</h2>
           <p>
             Sunt Dragoș Vîrjoghe, și mă ocup cu pasiune de a oferi soluții personalizate în domeniul imobiliar,
             asigurărilor și creditării. Am ales să îmi extind activitatea pentru a putea acoperi toate nevoile tale
@@ -125,22 +213,22 @@
           <div class="highlight-item glass">
             <div class="highlight-icon">🎯</div>
             <div class="highlight-content">
-              <h4>Consultanță personalizată</h4>
-              <p>Fiecare client primește atenție individuală și soluții adaptate nevoilor sale specifice.</p>
+              <h4 data-i18n="about_h1_t">Consultanță personalizată</h4>
+              <p data-i18n="about_h1_d">Fiecare client primește atenție individuală și soluții adaptate nevoilor sale specifice.</p>
             </div>
           </div>
           <div class="highlight-item glass">
             <div class="highlight-icon">⚡</div>
             <div class="highlight-content">
-              <h4>Rapiditate și eficiență</h4>
-              <p>Procesare rapidă, fără birocrație inutilă. Timpul tău contează.</p>
+              <h4 data-i18n="about_h2_t">Rapiditate și eficiență</h4>
+              <p data-i18n="about_h2_d">Procesare rapidă, fără birocrație inutilă. Timpul tău contează.</p>
             </div>
           </div>
           <div class="highlight-item glass">
             <div class="highlight-icon">🤝</div>
             <div class="highlight-content">
-              <h4>Transparență totală</h4>
-              <p>Informații clare, fără costuri ascunse. Decizii informate, rezultate pe măsură.</p>
+              <h4 data-i18n="about_h3_t">Transparență totală</h4>
+              <p data-i18n="about_h3_d">Informații clare, fără costuri ascunse. Decizii informate, rezultate pe măsură.</p>
             </div>
           </div>
         </div>
@@ -152,58 +240,61 @@
   <section class="services" id="services">
     <div class="container">
       <div class="services-header reveal">
-        <span class="section-label">Ce ofer</span>
-        <h2 class="section-title">Serviciile mele</h2>
-        <p class="section-subtitle">
+        <span class="section-label" data-i18n="srv_label">Ce ofer</span>
+        <h2 class="section-title" data-i18n="srv_title">Serviciile mele</h2>
+        <p class="section-subtitle" data-i18n="srv_sub">
           Trei domenii, un singur consultant. Toate soluțiile financiare de care ai nevoie, într-un singur loc.
         </p>
       </div>
 
       <div class="services-grid">
         <div class="service-card glass reveal" id="serviceImobiliar">
-          <img src="images/real-estate.png" alt="Imobiliar" class="service-image">
+          <img src="images/real-estate.png" alt="Servicii Imobiliare și Consultanță" class="service-image"
+            loading="lazy">
           <div class="service-card-content">
             <div class="service-icon">🏠</div>
-            <h3>Imobiliar</h3>
-            <p>Consiliere completă în tranzacțiile imobiliare, de la identificarea proprietății ideale la finalizarea
+            <h3 data-i18n="srv_imob_t">Imobiliar</h3>
+            <p data-i18n="srv_imob_p">Consiliere completă în tranzacțiile imobiliare, de la identificarea proprietății ideale la finalizarea
               actelor.</p>
             <ul class="service-list">
-              <li>Vânzare & cumpărare proprietăți</li>
-              <li>Evaluare și consultanță</li>
-              <li>Intermediere tranzacții</li>
-              <li>Suport documentație</li>
+              <li data-i18n="srv_imob_l1">Vânzare & cumpărare proprietăți</li>
+              <li data-i18n="srv_imob_l2">Evaluare și consultanță</li>
+              <li data-i18n="srv_imob_l3">Intermediere tranzacții</li>
+              <li data-i18n="srv_imob_l4">Suport documentație</li>
             </ul>
           </div>
         </div>
 
         <div class="service-card glass reveal" id="serviceAsigurari">
-          <img src="images/insurance-shield.png" alt="Asigurări" class="service-image">
+          <img src="images/insurance-shield.png" alt="Broker Asigurări RCA și CASCO" class="service-image"
+            loading="lazy">
           <div class="service-card-content">
             <div class="service-icon">🛡️</div>
-            <h3>Asigurări</h3>
-            <p>Gama completă de asigurări pentru tine, familia ta și bunurile tale. Protecție maximă, prețuri
+            <h3 data-i18n="nav_insurance">Asigurări</h3>
+            <p data-i18n="srv_asig_p">Gama completă de asigurări pentru tine, familia ta și bunurile tale. Protecție maximă, prețuri
               competitive.</p>
             <ul class="service-list">
-              <li>RCA & CASCO auto</li>
-              <li>Asigurări locuință & bunuri</li>
-              <li>Asigurări de călătorie</li>
-              <li>Asigurări de sănătate & viață</li>
+              <li data-i18n="srv_asig_l1">RCA & CASCO auto</li>
+              <li data-i18n="srv_asig_l2">Asigurări locuință & bunuri</li>
+              <li data-i18n="srv_asig_l3">Asigurări de călătorie</li>
+              <li data-i18n="srv_asig_l4">Asigurări de sănătate & viață</li>
             </ul>
           </div>
         </div>
 
         <div class="service-card glass reveal" id="serviceCreditare">
-          <img src="images/credit-finance.png" alt="Creditare" class="service-image">
+          <img src="images/credit-finance.png" alt="Consultanță Credite Ipotecare și Refinanțări" class="service-image"
+            loading="lazy">
           <div class="service-card-content">
             <div class="service-icon">💳</div>
-            <h3>Creditare</h3>
-            <p>Soluții de creditare avantajoase, cu cele mai bune dobânzi de pe piață. Te ajut să alegi creditul
+            <h3 data-i18n="nav_credit">Creditare</h3>
+            <p data-i18n="srv_cred_p">Soluții de creditare avantajoase, cu cele mai bune dobânzi de pe piață. Te ajut să alegi creditul
               potrivit.</p>
             <ul class="service-list">
-              <li>Credite ipotecare</li>
-              <li>Refinanțări avantajoase</li>
-              <li>Credite de nevoi personale</li>
-              <li>Consultanță financiară</li>
+              <li data-i18n="srv_cred_l1">Credite ipotecare</li>
+              <li data-i18n="srv_cred_l2">Refinanțări avantajoase</li>
+              <li data-i18n="srv_cred_l3">Credite de nevoi personale</li>
+              <li data-i18n="srv_cred_l4">Consultanță financiară</li>
             </ul>
           </div>
         </div>
@@ -214,9 +305,9 @@
   <section class="insurance-details" id="insurance">
     <div class="container">
       <div class="services-header reveal">
-        <span class="section-label">Asigurări</span>
-        <h2 class="section-title">Tipuri de asigurări disponibile</h2>
-        <p class="section-subtitle">
+        <span class="section-label" data-i18n="nav_insurance">Asigurări</span>
+        <h2 class="section-title" data-i18n="ins_title">Tipuri de asigurări disponibile</h2>
+        <p class="section-subtitle" data-i18n="ins_sub">
           Protecție completă pentru fiecare aspect al vieții tale. Alege asigurarea potrivită.
         </p>
       </div>
@@ -224,43 +315,43 @@
       <div class="insurance-grid">
         <div class="insurance-item glass reveal" id="insuranceRCA">
           <span class="icon">🚗</span>
-          <h4>RCA</h4>
-          <p>Asigurare obligatorie auto, prețuri competitive de la toate companiile.</p>
+          <h4 data-i18n="ins_rca_t">RCA</h4>
+          <p data-i18n="ins_rca_p">Asigurare obligatorie auto, prețuri competitive de la toate companiile.</p>
         </div>
         <div class="insurance-item glass reveal" id="insuranceCASCO">
           <span class="icon">🏎️</span>
-          <h4>CASCO</h4>
-          <p>Protecție completă pentru autovehiculul tău, inclusiv furt și daune proprii.</p>
+          <h4 data-i18n="ins_casco_t">CASCO</h4>
+          <p data-i18n="ins_casco_p">Protecție completă pentru autovehiculul tău, inclusiv furt și daune proprii.</p>
         </div>
         <div class="insurance-item glass reveal" id="insuranceLocuinta">
           <span class="icon">🏡</span>
-          <h4>Locuință</h4>
-          <p>Asigurare obligatorie și facultativă pentru locuința ta.</p>
+          <h4 data-i18n="ins_loc_t">Locuință</h4>
+          <p data-i18n="ins_loc_p">Asigurare obligatorie și facultativă pentru locuința ta.</p>
         </div>
         <div class="insurance-item glass reveal" id="insuranceBunuri">
           <span class="icon">📦</span>
-          <h4>Bunuri</h4>
-          <p>Protejează-ți bunurile valoroase împotriva riscurilor neprevăzute.</p>
+          <h4 data-i18n="ins_bun_t">Bunuri</h4>
+          <p data-i18n="ins_bun_p">Protejează-ți bunurile valoroase împotriva riscurilor neprevăzute.</p>
         </div>
         <div class="insurance-item glass reveal" id="insuranceCalatorie">
           <span class="icon">✈️</span>
-          <h4>Călătorie</h4>
-          <p>Asigurare medicală de călătorie pentru vacanțe fără griji.</p>
+          <h4 data-i18n="ins_cal_t">Călătorie</h4>
+          <p data-i18n="ins_cal_p">Asigurare medicală de călătorie pentru vacanțe fără griji.</p>
         </div>
         <div class="insurance-item glass reveal" id="insuranceSanatate">
           <span class="icon">🏥</span>
-          <h4>Sănătate</h4>
-          <p>Asigurări de sănătate pentru acces la cele mai bune servicii medicale.</p>
+          <h4 data-i18n="ins_san_t">Sănătate</h4>
+          <p data-i18n="ins_san_p">Asigurări de sănătate pentru acces la cele mai bune servicii medicale.</p>
         </div>
         <div class="insurance-item glass reveal" id="insuranceViata">
           <span class="icon">❤️</span>
-          <h4>Viață</h4>
-          <p>Protecție financiară pentru tine și familia ta pe termen lung.</p>
+          <h4 data-i18n="ins_viata_t">Viață</h4>
+          <p data-i18n="ins_viata_p">Protecție financiară pentru tine și familia ta pe termen lung.</p>
         </div>
         <div class="insurance-item glass reveal" id="insuranceRC">
           <span class="icon">⚖️</span>
-          <h4>Răspundere civilă</h4>
-          <p>Acoperire pentru daunele produse terților în activitatea profesională.</p>
+          <h4 data-i18n="ins_rc_t">Răspundere civilă</h4>
+          <p data-i18n="ins_rc_p">Acoperire pentru daunele produse terților în activitatea profesională.</p>
         </div>
       </div>
     </div>
@@ -270,9 +361,9 @@
   <section class="how-it-works" id="howItWorks">
     <div class="container">
       <div class="services-header reveal">
-        <span class="section-label">Cum funcționează</span>
-        <h2 class="section-title">Proces simplu, în 4 pași</h2>
-        <p class="section-subtitle">
+        <span class="section-label" data-i18n="hw_label">Cum funcționează</span>
+        <h2 class="section-title" data-i18n="hw_title">Proces simplu, în 4 pași</h2>
+        <p class="section-subtitle" data-i18n="hw_sub">
           De la primul contact până la emiterea poliței sau aprobarea creditului, totul este simplu și transparent.
         </p>
       </div>
@@ -280,23 +371,23 @@
       <div class="steps-grid">
         <div class="step-card glass reveal" id="step1">
           <div class="step-number">1</div>
-          <h4>Contactează-mă</h4>
-          <p>Sună-mă sau scrie-mi pe WhatsApp pentru o discuție inițială gratuită.</p>
+          <h4 data-i18n="nav_contact">Contactează-mă</h4>
+          <p data-i18n="hw_s1_p">Sună-mă sau scrie-mi pe WhatsApp pentru o discuție inițială gratuită.</p>
         </div>
         <div class="step-card glass reveal" id="step2">
           <div class="step-number">2</div>
-          <h4>Analizăm nevoile</h4>
-          <p>Identificăm împreună soluția optimă pentru situația ta specifică.</p>
+          <h4 data-i18n="hw_s2_t">Analizăm nevoile</h4>
+          <p data-i18n="hw_s2_p">Identificăm împreună soluția optimă pentru situația ta specifică.</p>
         </div>
         <div class="step-card glass reveal" id="step3">
           <div class="step-number">3</div>
-          <h4>Primești oferta</h4>
-          <p>Îți prezint cele mai bune oferte de pe piață, transparente și personalizate.</p>
+          <h4 data-i18n="hw_s3_t">Primești oferta</h4>
+          <p data-i18n="hw_s3_p">Îți prezint cele mai bune oferte de pe piață, transparente și personalizate.</p>
         </div>
         <div class="step-card glass reveal" id="step4">
           <div class="step-number">4</div>
-          <h4>Finalizăm rapid</h4>
-          <p>Emitere rapidă a documentelor, fără birocrație inutilă.</p>
+          <h4 data-i18n="hw_s4_t">Finalizăm rapid</h4>
+          <p data-i18n="hw_s4_p">Emitere rapidă a documentelor, fără birocrație inutilă.</p>
         </div>
       </div>
     </div>
@@ -306,9 +397,9 @@
   <section class="credit-section" id="credit">
     <div class="container">
       <div class="services-header reveal">
-        <span class="section-label">Creditare</span>
-        <h2 class="section-title">Soluții de creditare</h2>
-        <p class="section-subtitle">
+        <span class="section-label" data-i18n="nav_credit">Creditare</span>
+        <h2 class="section-title" data-i18n="crd_title">Soluții de creditare</h2>
+        <p class="section-subtitle" data-i18n="crd_sub">
           Găsim împreună creditul cu cele mai avantajoase condiții, adaptat posibilităților tale.
         </p>
       </div>
@@ -316,35 +407,35 @@
       <div class="credit-grid">
         <div class="credit-card glass reveal" id="creditIpotecar">
           <span class="credit-icon">🏦</span>
-          <h3>Credit ipotecar</h3>
-          <p>Finanțare pentru achiziția locuinței visurilor tale, cu dobânzi competitive.</p>
+          <h3 data-i18n="crd_ipo_t">Credit ipotecar</h3>
+          <p data-i18n="crd_ipo_p">Finanțare pentru achiziția locuinței visurilor tale, cu dobânzi competitive.</p>
           <ul class="credit-features">
-            <li>Dobânzi avantajoase</li>
-            <li>Perioade flexibile de rambursare</li>
-            <li>Consultanță bancară completă</li>
-            <li>Suport în obținerea aprobării</li>
+            <li data-i18n="crd_ipo_l1">Dobânzi avantajoase</li>
+            <li data-i18n="crd_ipo_l2">Perioade flexibile de rambursare</li>
+            <li data-i18n="crd_ipo_l3">Consultanță bancară completă</li>
+            <li data-i18n="crd_ipo_l4">Suport în obținerea aprobării</li>
           </ul>
         </div>
         <div class="credit-card glass reveal" id="creditRefinantare">
           <span class="credit-icon">🔄</span>
-          <h3>Refinanțare</h3>
-          <p>Reduci rata lunară sau obții condiții mai bune pentru creditul existent.</p>
+          <h3 data-i18n="crd_ref_t">Refinanțare</h3>
+          <p data-i18n="crd_ref_p">Reduci rata lunară sau obții condiții mai bune pentru creditul existent.</p>
           <ul class="credit-features">
-            <li>Reducerea costurilor lunare</li>
-            <li>Consolidare credite multiple</li>
-            <li>Negociere dobânzi</li>
-            <li>Analiză gratuită a situației</li>
+            <li data-i18n="crd_ref_l1">Reducerea costurilor lunare</li>
+            <li data-i18n="crd_ref_l2">Consolidare credite multiple</li>
+            <li data-i18n="crd_ref_l3">Negociere dobânzi</li>
+            <li data-i18n="crd_ref_l4">Analiză gratuită a situației</li>
           </ul>
         </div>
         <div class="credit-card glass reveal" id="creditNevoi">
           <span class="credit-icon">💰</span>
-          <h3>Nevoi personale</h3>
-          <p>Credit rapid pentru proiectele tale personale, fără garanții imobiliare.</p>
+          <h3 data-i18n="crd_nev_t">Nevoi personale</h3>
+          <p data-i18n="crd_nev_p">Credit rapid pentru proiectele tale personale, fără garanții imobiliare.</p>
           <ul class="credit-features">
-            <li>Aprobare rapidă</li>
-            <li>Fără garanții imobiliare</li>
-            <li>Sume flexibile</li>
-            <li>Documente minime</li>
+            <li data-i18n="crd_nev_l1">Aprobare rapidă</li>
+            <li data-i18n="crd_nev_l2">Fără garanții imobiliare</li>
+            <li data-i18n="crd_nev_l3">Sume flexibile</li>
+            <li data-i18n="crd_nev_l4">Documente minime</li>
           </ul>
         </div>
       </div>
@@ -355,9 +446,9 @@
   <section class="testimonials" id="testimonials">
     <div class="container">
       <div class="services-header reveal">
-        <span class="section-label">Testimoniale</span>
-        <h2 class="section-title">Ce spun clienții</h2>
-        <p class="section-subtitle">
+        <span class="section-label" data-i18n="tst_label">Testimoniale</span>
+        <h2 class="section-title" data-i18n="tst_title">Ce spun clienții</h2>
+        <p class="section-subtitle" data-i18n="tst_sub">
           Opiniile celor care au ales să lucreze cu mine.
         </p>
       </div>
@@ -366,13 +457,13 @@
         <div class="testimonial-card glass reveal" id="testimonial1">
           <div class="stars">★★★★★</div>
           <span class="quote-icon">❝</span>
-          <p>„A fost foarte ușor să închei polița RCA, totul s-a rezolvat rapid și fără bătăi de cap. Recomand cu
+          <p data-i18n="tst_1_p">„A fost foarte ușor să închei polița RCA, totul s-a rezolvat rapid și fără bătăi de cap. Recomand cu
             încredere!"</p>
           <div class="testimonial-author">
             <div class="author-avatar">LS</div>
             <div class="author-info">
               <h5>Laurențiu S.</h5>
-              <span>Client asigurări auto</span>
+              <span data-i18n="tst_1_c">Client asigurări auto</span>
             </div>
           </div>
         </div>
@@ -380,13 +471,13 @@
         <div class="testimonial-card glass reveal" id="testimonial2">
           <div class="stars">★★★★★</div>
           <span class="quote-icon">❝</span>
-          <p>„Am primit cele mai bune oferte de pe piață pentru creditul ipotecar. Profesionalism și transparență la
+          <p data-i18n="tst_2_p">„Am primit cele mai bune oferte de pe piață pentru creditul ipotecar. Profesionalism și transparență la
             superlativ."</p>
           <div class="testimonial-author">
             <div class="author-avatar">AD</div>
             <div class="author-info">
               <h5>Adrian D.</h5>
-              <span>Client creditare</span>
+              <span data-i18n="tst_2_c">Client creditare</span>
             </div>
           </div>
         </div>
@@ -394,16 +485,83 @@
         <div class="testimonial-card glass reveal" id="testimonial3">
           <div class="stars">★★★★★</div>
           <span class="quote-icon">❝</span>
-          <p>„Inițial am avut reticențe, dar Dragoș m-a ghidat cu răbdare prin tot procesul. Acum am asigurarea perfectă
+          <p data-i18n="tst_3_p">„Inițial am avut reticențe, dar Dragoș m-a ghidat cu răbdare prin tot procesul. Acum am asigurarea perfectă
             pentru nevoile mele."</p>
           <div class="testimonial-author">
             <div class="author-avatar">CM</div>
             <div class="author-info">
               <h5>Carmen M.</h5>
-              <span>Client asigurări locuință</span>
+              <span data-i18n="tst_3_c">Client asigurări locuință</span>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="services-header reveal">
+        <span class="section-label" data-i18n="nav_faq">FAQ</span>
+        <h2 class="section-title" data-i18n="faq_title">Întrebări Frecvente</h2>
+        <p class="section-subtitle" data-i18n="faq_sub">
+          Răspunsuri rapide la cele mai comune întrebări despre serviciile mele financiare.
+        </p>
+      </div>
+
+      <div class="faq-accordion">
+        <details class="faq-item glass" name="faq" open>
+          <summary class="faq-question">
+            <div class="faq-question-inner">
+              <h4 data-i18n="faq_1_q">Cât costă o consultanță financiară?</h4>
+              <div class="faq-icon"></div>
+            </div>
+          </summary>
+          <div class="faq-answer">
+            <p data-i18n="faq_1_a">Consultanța inițială este 100% gratuită. Începem prin a discuta nevoile tale pentru a găsi cea mai bună
+              soluție de asigurare sau creditare.</p>
+          </div>
+        </details>
+
+        <details class="faq-item glass" name="faq">
+          <summary class="faq-question">
+            <div class="faq-question-inner">
+              <h4 data-i18n="faq_2_q">Ce tipuri de asigurări poți intermedia?</h4>
+              <div class="faq-icon"></div>
+            </div>
+          </summary>
+          <div class="faq-answer">
+            <p data-i18n="faq_2_a">Colaborez cu numeroase companii de asigurări și te pot ajuta cu RCA, CASCO, PAD, asigurări de bunuri,
+              călătorie, sănătate, viață și malpraxis.</p>
+          </div>
+        </details>
+
+        <details class="faq-item glass" name="faq">
+          <summary class="faq-question">
+            <div class="faq-question-inner">
+              <h4 data-i18n="faq_3_q">Mă poți ajuta cu refinanțarea unui credit existent?</h4>
+              <div class="faq-icon"></div>
+            </div>
+          </summary>
+          <div class="faq-answer">
+            <p data-i18n="faq_3_a">Sigur! Vom analiza contractul actual și vom identifica ofertele băncilor concurente pentru a obține o
+              rată mai mică sau o perioadă optimizată de rambursare.</p>
+          </div>
+        </details>
+
+        <details class="faq-item glass" name="faq">
+          <summary class="faq-question">
+            <div class="faq-question-inner">
+              <h4 data-i18n="faq_4_q">Cât durează procesul de emitere a unei polițe?</h4>
+              <div class="faq-icon"></div>
+            </div>
+          </summary>
+          <div class="faq-answer">
+            <p data-i18n="faq_4_a">Pentru polițele auto (RCA/CASCO) și de călătorie, emiterea se face aproape instant, imediat ce primim
+              documentele necesare și validăm plata.</p>
+          </div>
+        </details>
       </div>
     </div>
   </section>
@@ -412,9 +570,9 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="services-header reveal">
-        <span class="section-label">Contact</span>
-        <h2 class="section-title">Hai să discutăm</h2>
-        <p class="section-subtitle">
+        <span class="section-label" data-i18n="cnt_label">Contact</span>
+        <h2 class="section-title" data-i18n="cnt_title">Hai să discutăm</h2>
+        <p class="section-subtitle" data-i18n="cnt_sub">
           Sunt mereu la un telefon distanță. Contactează-mă pentru o consultanță gratuită.
         </p>
       </div>
@@ -424,68 +582,68 @@
           <a href="tel:+40766658583" class="contact-item glass" id="contactPhone">
             <div class="contact-icon">📞</div>
             <div>
-              <h4>Telefon</h4>
+              <h4 data-i18n="cnt_p_t">Telefon</h4>
               <p>+40 766 658 583</p>
             </div>
           </a>
           <a href="https://wa.me/40766658583" target="_blank" class="contact-item glass" id="contactWhatsapp">
             <div class="contact-icon">💬</div>
             <div>
-              <h4>WhatsApp</h4>
-              <p>Scrie-mi oricând pe WhatsApp</p>
+              <h4 data-i18n="cnt_w_t">WhatsApp</h4>
+              <p data-i18n="cnt_w_p">Scrie-mi oricând pe WhatsApp</p>
             </div>
           </a>
           <div class="contact-item glass" id="contactSchedule">
             <div class="contact-icon">🕐</div>
             <div>
-              <h4>Program</h4>
-              <p>Luni – Vineri: 09:00 – 18:00</p>
+              <h4 data-i18n="cnt_s_t">Program</h4>
+              <p data-i18n="cnt_s_p">Luni – Vineri: 09:00 – 18:00</p>
             </div>
           </div>
           <div class="contact-item glass" id="contactLocation">
             <div class="contact-icon">📍</div>
             <div>
-              <h4>Locație</h4>
-              <p>România</p>
+              <h4 data-i18n="cnt_l_t">Locație</h4>
+              <p data-i18n="cnt_l_p">România</p>
             </div>
           </div>
         </div>
 
         <div class="contact-form-wrapper glass reveal" id="contactFormWrapper">
-          <h3 style="font-size: 1.3rem; margin-bottom: 24px;">Trimite un mesaj</h3>
+          <h3 style="font-size: 1.3rem; margin-bottom: 24px;" data-i18n="frm_title">Trimite un mesaj</h3>
           <form id="contactForm">
             <div class="form-group">
-              <label for="name">Numele tău</label>
-              <input type="text" id="name" name="name" placeholder="Ex: Ion Popescu" required>
+              <label for="name" data-i18n="frm_l_name">Numele tău</label>
+              <input type="text" id="name" name="name" placeholder="Ex: Ion Popescu" data-i18n="frm_p_name" required>
             </div>
             <div class="form-group">
-              <label for="phone">Telefon</label>
-              <input type="tel" id="phone" name="phone" placeholder="Ex: 07xx xxx xxx" required>
+              <label for="phone" data-i18n="frm_l_phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" placeholder="Ex: 07xx xxx xxx" data-i18n="frm_p_phone" required>
             </div>
             <div class="form-group">
-              <label for="interest">Sunt interesat de</label>
+              <label for="interest" data-i18n="frm_l_int">Sunt interesat de</label>
               <select id="interest" name="interest" required>
-                <option value="" disabled selected>Alege un serviciu</option>
-                <option value="rca">Asigurare RCA</option>
-                <option value="casco">Asigurare CASCO</option>
-                <option value="locuinta">Asigurare locuință</option>
-                <option value="calatorie">Asigurare călătorie</option>
-                <option value="sanatate">Asigurare sănătate</option>
-                <option value="viata">Asigurare viață</option>
-                <option value="bunuri">Asigurare bunuri</option>
-                <option value="rc">Răspundere civilă</option>
-                <option value="ipotecar">Credit ipotecar</option>
-                <option value="refinantare">Refinanțare</option>
-                <option value="nevoi">Credit nevoi personale</option>
-                <option value="imobiliar">Consultanță imobiliară</option>
+                <option value="" disabled selected data-i18n="frm_opt_def">Alege un serviciu</option>
+                <option value="rca" data-i18n="frm_opt_rca">Asigurare RCA</option>
+                <option value="casco" data-i18n="frm_opt_casco">Asigurare CASCO</option>
+                <option value="locuinta" data-i18n="frm_opt_loc">Asigurare locuință</option>
+                <option value="calatorie" data-i18n="frm_opt_cal">Asigurare călătorie</option>
+                <option value="sanatate" data-i18n="frm_opt_san">Asigurare sănătate</option>
+                <option value="viata" data-i18n="frm_opt_via">Asigurare viață</option>
+                <option value="bunuri" data-i18n="frm_opt_bun">Asigurare bunuri</option>
+                <option value="rc" data-i18n="frm_opt_rc">Răspundere civilă</option>
+                <option value="ipotecar" data-i18n="frm_opt_ipo">Credit ipotecar</option>
+                <option value="refinantare" data-i18n="frm_opt_ref">Refinanțare</option>
+                <option value="nevoi" data-i18n="frm_opt_nev">Credit nevoi personale</option>
+                <option value="imobiliar" data-i18n="frm_opt_imo">Consultanță imobiliară</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="message">Mesaj</label>
-              <textarea id="message" name="message" placeholder="Scrie aici detaliile tale..." rows="4"></textarea>
+              <label for="message" data-i18n="frm_l_msg">Mesaj</label>
+              <textarea id="message" name="message" placeholder="Scrie aici detaliile tale..." data-i18n="frm_p_msg" rows="4"></textarea>
             </div>
             <button type="submit" class="btn btn-primary form-submit" id="submitBtn">
-              ✉️ Trimite mesajul
+              <span data-i18n="frm_btn">✉️ Trimite mesajul</span>
             </button>
           </form>
         </div>
@@ -510,18 +668,18 @@
         </div>
 
         <div class="footer-links">
-          <h4>Navigare</h4>
+          <h4 data-i18n="ftr_nav">Navigare</h4>
           <ul>
-            <li><a href="#about">Despre mine</a></li>
-            <li><a href="#services">Servicii</a></li>
-            <li><a href="#insurance">Asigurări</a></li>
-            <li><a href="#credit">Creditare</a></li>
+            <li><a href="#about" data-i18n="nav_about">Despre mine</a></li>
+            <li><a href="#services" data-i18n="nav_services">Servicii</a></li>
+            <li><a href="#insurance" data-i18n="nav_insurance">Asigurări</a></li>
+            <li><a href="#credit" data-i18n="nav_credit">Creditare</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
 
         <div class="footer-links">
-          <h4>Asigurări</h4>
+          <h4 data-i18n="nav_insurance">Asigurări</h4>
           <ul>
             <li><a href="#insurance">RCA</a></li>
             <li><a href="#insurance">CASCO</a></li>
@@ -532,7 +690,7 @@
         </div>
 
         <div class="footer-links">
-          <h4>Creditare</h4>
+          <h4 data-i18n="nav_credit">Creditare</h4>
           <ul>
             <li><a href="#credit">Credit ipotecar</a></li>
             <li><a href="#credit">Refinanțare</a></li>
@@ -542,12 +700,13 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Dragoș Vîrjoghe. Site realizat cu pasiune de către <a href="https://echipadetocilari.ro"
+        <p data-i18n="ftr_cp">&copy; 2026 Dragoș Vîrjoghe. Site realizat cu pasiune de către <a href="https://echipadetocilari.ro"
             target="_blank">Echipa de Tocilari</a></p>
       </div>
     </div>
   </footer>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 

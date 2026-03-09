@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initContactForm();
   initSmoothScroll();
+  initLanguageSwitcher();
 });
 
 // ===== Sticky Navbar =====
@@ -247,4 +248,56 @@ if (profileCard) {
   }, { threshold: 0.5 });
 
   counterObserver.observe(profileCard);
+}
+
+// ===== Language Switcher =====
+function initLanguageSwitcher() {
+  const langSwitch = document.getElementById('langSwitch');
+  if (!langSwitch || typeof translations === 'undefined') return;
+
+  const spans = langSwitch.querySelectorAll('span[data-lang]');
+  let currentLang = localStorage.getItem('site_lang') || 'ro';
+
+  // Set initial language
+  setLanguage(currentLang);
+
+  spans.forEach(span => {
+    span.addEventListener('click', () => {
+      const lang = span.getAttribute('data-lang');
+      if (lang === currentLang) return;
+
+      currentLang = lang;
+      localStorage.setItem('site_lang', currentLang);
+      setLanguage(currentLang);
+    });
+  });
+
+  function setLanguage(lang) {
+    // Update active class on switch
+    spans.forEach(s => {
+      if (s.getAttribute('data-lang') === lang) {
+        s.classList.add('active');
+      } else {
+        s.classList.remove('active');
+      }
+    });
+
+    // Update all elements with data-i18n
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[key] && translations[key][lang]) {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = translations[key][lang];
+        } else if (el.tagName === 'OPTION') {
+          el.textContent = translations[key][lang];
+        } else {
+          el.innerHTML = translations[key][lang];
+        }
+      }
+    });
+
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+  }
 }
