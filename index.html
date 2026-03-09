@@ -91,7 +91,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 </head>
@@ -113,15 +113,6 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="#" class="nav-logo">Dragoș <span>Vîrjoghe</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about" data-i18n="nav_about">Despre mine</a></li>
-        <li><a href="#services" data-i18n="nav_services">Servicii</a></li>
-        <li><a href="#insurance" data-i18n="nav_insurance">Asigurări</a></li>
-        <li><a href="#credit" data-i18n="nav_credit">Creditare</a></li>
-        <li><a href="#testimonials" data-i18n="nav_testimonials">Păreri</a></li>
-        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
-        <li><a href="#contact" class="nav-cta" data-i18n="nav_contact">Contactează-mă</a></li>
-      </ul>
       <div class="lang-switch" id="langSwitch">
         <span class="active" data-lang="ro">RO</span>
         <span class="separator">|</span>
@@ -134,6 +125,17 @@
       </div>
     </div>
   </nav>
+
+  <!-- Mobile menu (isolated from desktop rules) -->
+  <ul class="mobile-nav-links" id="navLinks">
+    <li><a href="#about" data-i18n="nav_about">Despre mine</a></li>
+    <li><a href="#services" data-i18n="nav_services">Servicii</a></li>
+    <li><a href="#insurance" data-i18n="nav_insurance">Asigurări</a></li>
+    <li><a href="#credit" data-i18n="nav_credit">Creditare</a></li>
+    <li><a href="#testimonials" data-i18n="nav_testimonials">Păreri</a></li>
+    <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta" data-i18n="nav_contact">Contactează-mă</a></li>
+  </ul>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
@@ -229,7 +231,8 @@
             <div class="highlight-icon">🤝</div>
             <div class="highlight-content">
               <h4 data-i18n="about_h3_t">Transparență totală</h4>
-              <p data-i18n="about_h3_d">Informații clare, fără costuri ascunse. Decizii informate, rezultate pe măsură.
+              <p data-i18n="about_h3_d">Informații clare, fără costuri ascunse. Decizii informate, rezultate pe
+                măsură.
               </p>
             </div>
           </div>
@@ -292,7 +295,8 @@
           <div class="service-card-content">
             <div class="service-icon">💳</div>
             <h3 data-i18n="nav_credit">Creditare</h3>
-            <p data-i18n="srv_cred_p">Soluții de creditare avantajoase, cu cele mai bune dobânzi de pe piață. Te ajut să
+            <p data-i18n="srv_cred_p">Soluții de creditare avantajoase, cu cele mai bune dobânzi de pe piață. Te ajut
+              să
               alegi creditul
               potrivit.</p>
             <ul class="service-list">
@@ -477,7 +481,8 @@
         <div class="testimonial-card glass reveal" id="testimonial2">
           <div class="stars">★★★★★</div>
           <span class="quote-icon">❝</span>
-          <p data-i18n="tst_2_p">„Am primit cele mai bune oferte de pe piață pentru creditul ipotecar. Profesionalism și
+          <p data-i18n="tst_2_p">„Am primit cele mai bune oferte de pe piață pentru creditul ipotecar. Profesionalism
+            și
             transparență la
             superlativ."</p>
           <div class="testimonial-author">
@@ -492,7 +497,8 @@
         <div class="testimonial-card glass reveal" id="testimonial3">
           <div class="stars">★★★★★</div>
           <span class="quote-icon">❝</span>
-          <p data-i18n="tst_3_p">„Inițial am avut reticențe, dar Dragoș m-a ghidat cu răbdare prin tot procesul. Acum am
+          <p data-i18n="tst_3_p">„Inițial am avut reticențe, dar Dragoș m-a ghidat cu răbdare prin tot procesul. Acum
+            am
             asigurarea perfectă
             pentru nevoile mele."</p>
           <div class="testimonial-author">
@@ -527,7 +533,8 @@
             </div>
           </summary>
           <div class="faq-answer">
-            <p data-i18n="faq_1_a">Consultanța inițială este 100% gratuită. Începem prin a discuta nevoile tale pentru a
+            <p data-i18n="faq_1_a">Consultanța inițială este 100% gratuită. Începem prin a discuta nevoile tale pentru
+              a
               găsi cea mai bună
               soluție de asigurare sau creditare.</p>
           </div>
